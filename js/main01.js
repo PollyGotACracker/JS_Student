@@ -14,10 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
         continue;
       }
       input.focus();
+      // select 할 필요 없는데 넣었음
       input.select();
       return false;
     }
 
+    // input의 value를 비우는 걸 빠뜨림
     saveStudent();
   };
 
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       studentList = JSON.parse(studentLists);
     }
     studentList.forEach((e) => {
+      // 객체 student 와 겹침. 변수명 고쳐야 함
       const student = Object.values(e);
       let tr = document.createElement("TR");
 
